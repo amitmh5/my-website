@@ -100,10 +100,10 @@ const VIDEOS = [
 ];
 
 const PHOTOS = [
-  { src: img1, alt: "Halmandge Constructions project" },
-  { src: img2, alt: "Halmandge Constructions project" },
-  { src: img3, alt: "Halmandge Constructions project" },
-  { src: img4, alt: "Halmandge Constructions project" },
+  { src: img1, alt: "Halmandge Constructions & Interiors project" },
+  { src: img2, alt: "Halmandge Constructions & Interiors project" },
+  { src: img3, alt: "Halmandge Constructions & Interiors project" },
+  { src: img4, alt: "Halmandge Constructions & Interiors project" },
 ];
 
 function VideoCard({ src, label }: { src: string; label: string }) {
@@ -176,12 +176,20 @@ export default function App() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="flex items-center shrink-0">
+          <a href="#" className="flex items-center gap-3 shrink-0">
             <img
               src={logoSrc}
-              alt="Halmandge Constructions logo"
+              alt="Halmandge Constructions & Interiors logo"
               className="h-12 lg:h-14 w-auto object-contain"
             />
+            <span
+              className={`text-lg lg:text-xl tracking-wide leading-none transition-colors duration-300 ${
+                scrolled ? "text-foreground" : "text-white"
+              }`}
+              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.08em" }}
+            >
+              Halmandge Constructions & Interiors
+            </span>
           </a>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -516,7 +524,7 @@ export default function App() {
             <div className="flex justify-center pt-2">
               <img
                 src={logoSrc}
-                alt="Halmandge Constructions"
+                alt="Halmandge Constructions & Interiors"
                 className="h-24 w-auto object-contain opacity-70"
               />
             </div>
@@ -531,7 +539,7 @@ export default function App() {
             className="text-white/55 tracking-wide"
             style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.15em", fontSize: "0.85rem" }}
           >
-            Halmandge Constructions
+            Halmandge Constructions & Interiors
           </p>
           <p>Bidar, Karnataka – 585403</p>
           <p>mahendrahalmandge@gmail.com</p>
