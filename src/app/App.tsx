@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Mail, Phone, MapPin, Clock, ArrowRight, ChevronRight, Play, Pause } from "lucide-react";
 
-import logoSrc from "../imports/ChatGPT_Image_Jul_2__2026__09_22_26_PM.png";
+import logoSrc from "../imports/logo_hc.png";
 import video1 from "../imports/WhatsApp_Video_2026-07-02_at_14.52.05.mp4";
 import video2 from "../imports/WhatsApp_Video_2026-07-02_at_14.52.05__1_.mp4";
 import video3 from "../imports/WhatsApp_Video_2026-07-02_at_14.52.05__2_.mp4";
@@ -546,14 +546,6 @@ export default function App() {
               </div>
               <ArrowRight size={24} className="group-hover:translate-x-1.5 transition-transform duration-200 shrink-0" />
             </a>
-
-            <div className="flex justify-center pt-2">
-              <img
-                src={logoSrc}
-                alt="Halmandge Constructions & Interiors"
-                className="h-24 w-auto object-contain opacity-70"
-              />
-            </div>
           </div>
         </div>
       </section>
