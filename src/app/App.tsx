@@ -207,7 +207,7 @@ export default function App() {
           </nav>
 
           <a
-            href="mailto:mahendrahalmandge@gmail.com?subject=Free%20Consultation%20Request"
+            href="mailto:halmandgeconstructions@gmail.com?subject=Free%20Consultation%20Request"
             className="hidden lg:inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 hover:opacity-90 transition-opacity duration-200"
             style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.1em" }}
           >
@@ -235,7 +235,7 @@ export default function App() {
               </button>
             ))}
             <a
-              href="mailto:mahendrahalmandge@gmail.com?subject=Free%20Consultation%20Request"
+              href="mailto:halmandgeconstructions@gmail.com?subject=Free%20Consultation%20Request"
               className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-3 w-fit mt-2"
               style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.1em" }}
             >
@@ -259,7 +259,7 @@ export default function App() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-0.5 bg-accent" />
               <p
-                className="text-xs text-accent/90 tracking-[0.25em] uppercase"
+                className="inline-block text-sm sm:text-base lg:text-lg text-accent-foreground bg-accent px-4 py-2 tracking-[0.2em] uppercase shadow-lg"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 Bidar's Premier Design Studio
@@ -301,7 +301,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 lg:divide-x lg:divide-white/10">
           {[
             { label: "Years of Experience", value: "10+" },
-            { label: "Projects Completed", value: "200+" },
+            { label: "Projects Completed", value: "100+" },
             { label: "Services Offered", value: "5" },
             { label: "Free Consultation", value: "Always" },
           ].map((stat) => (
@@ -393,7 +393,7 @@ export default function App() {
                 <p className="text-sm text-muted-foreground leading-relaxed">{CONSULTATION.description}</p>
               </div>
               <a
-                href="mailto:mahendrahalmandge@gmail.com?subject=Free%20Consultation%20Request"
+                href="mailto:halmandgeconstructions@gmail.com?subject=Free%20Consultation%20Request"
                 className="inline-flex items-center gap-2 bg-foreground text-primary-foreground px-8 py-4 hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
                 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.1em" }}
               >
@@ -484,10 +484,10 @@ export default function App() {
 
             <div className="flex flex-col gap-6">
               {[
-                { icon: MapPin, label: "Studio", value: "15.3.55, Ganesh Colony, Kumbarvada Cross, Bidar – 585403", href: undefined },
+                { icon: MapPin, label: "Studio", value: "15.3.55, Ganesh Colony, Kumbarvada Cross, Bidar – 585403", href: "https://share.google/UQyDilTonnTrBSwK6" },
                 { icon: Phone, label: "Phone", value: "+91 89713 46766", href: "tel:+918971346766" },
                 { icon: Phone, label: "Phone", value: "+91 97312 00115", href: "tel:+919731200115" },
-                { icon: Mail, label: "Email", value: "mahendrahalmandge@gmail.com", href: "mailto:mahendrahalmandge@gmail.com" },
+                { icon: Mail, label: "Email", value: "halmandgeconstructions@gmail.com", href: "mailto:halmandgeconstructions@gmail.com" },
               ].map(({ icon: Icon, label, value, href }, idx) => (
                 <div key={`${label}-${idx}`} className="flex gap-4 items-start">
                   <div className="w-10 h-10 border border-white/15 flex items-center justify-center shrink-0">
@@ -498,7 +498,12 @@ export default function App() {
                       {label}
                     </p>
                     {href ? (
-                      <a href={href} className="text-sm text-white/75 leading-relaxed hover:text-accent transition-colors duration-200">
+                      <a
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="text-sm text-white/75 leading-relaxed hover:text-accent transition-colors duration-200"
+                      >
                         {value}
                       </a>
                     ) : (
@@ -530,7 +535,7 @@ export default function App() {
             </div>
 
             <a
-              href="mailto:mahendrahalmandge@gmail.com?subject=Free%20Consultation%20Request"
+              href="mailto:halmandgeconstructions@gmail.com?subject=Free%20Consultation%20Request"
               className="group flex items-center justify-between bg-accent text-accent-foreground px-8 py-7 hover:opacity-90 transition-opacity duration-200"
             >
               <div>
@@ -563,7 +568,7 @@ export default function App() {
             Halmandge Constructions & Interiors
           </p>
           <p>Bidar, Karnataka – 585403</p>
-          <p>mahendrahalmandge@gmail.com</p>
+          <p>halmandgeconstructions@gmail.com</p>
           <p>© {new Date().getFullYear()} All rights reserved</p>
         </div>
       </footer>
