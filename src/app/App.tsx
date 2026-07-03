@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Mail, MapPin, Clock, ArrowRight, ChevronRight, Play, Pause } from "lucide-react";
+import { Menu, X, Mail, Phone, MapPin, Clock, ArrowRight, ChevronRight, Play, Pause } from "lucide-react";
 
 import logoSrc from "../imports/ChatGPT_Image_Jul_2__2026__09_22_26_PM.png";
 import video1 from "../imports/WhatsApp_Video_2026-07-02_at_14.52.05.mp4";
@@ -11,6 +11,10 @@ import img1 from "../imports/WhatsApp_Image_2026-07-02_at_14.54.04.jpeg";
 import img2 from "../imports/WhatsApp_Image_2026-07-02_at_14.54.04__1_.jpeg";
 import img3 from "../imports/WhatsApp_Image_2026-07-02_at_14.54.04__2_.jpeg";
 import img4 from "../imports/WhatsApp_Image_2026-07-02_at_14.53.17.jpeg";
+import floorplan2d3d from "../imports/floorplan_2d_3d.png";
+import interiorDesignImg from "../imports/interior_design.png";
+import structuralDesignImg from "../imports/structural_design.png";
+import renovationImg from "../imports/renovation.png";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
@@ -25,42 +29,40 @@ const SERVICES = [
     title: "Interior Design",
     description:
       "Transforming spaces into thoughtful, livable environments. Every room designed to reflect how you actually live — balancing aesthetics with function.",
-    image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=600&h=400&fit=crop&auto=format",
-    alt: "Elegant modern living room interior",
+    image: interiorDesignImg,
+    alt: "Interior design moodboard with FF&E material swatches and palette",
   },
   {
     number: "02",
     title: "2D & 3D Design",
     description:
       "From floor plans to photorealistic renders — see your space before a single wall is built. We present multiple concepts so you choose with confidence.",
-    image: "https://images.unsplash.com/photo-1771327811766-5f4149190b3d?w=600&h=400&fit=crop&auto=format",
-    alt: "Modern bedroom architectural design",
+    image: floorplan2d3d,
+    alt: "2D floor plan alongside a 3D top-down interior render",
   },
   {
     number: "03",
     title: "Structural Design",
     description:
       "Engineering integrity beneath every beautiful surface. Our structural work ensures your home is built to last — safe, compliant, and enduring.",
-    image: "https://images.unsplash.com/photo-1629946488804-217c002178cf?w=600&h=400&fit=crop&auto=format",
-    alt: "Contemporary building architecture",
+    image: structuralDesignImg,
+    alt: "Building under construction with tower crane and structural drawings",
   },
   {
     number: "04",
     title: "Renovation",
     description:
       "Breathe new life into existing spaces. Whether a single room or a full overhaul, we manage every detail from demolition to finishing.",
-    image: "https://images.unsplash.com/photo-1666969442529-caa46ad29336?w=600&h=400&fit=crop&auto=format",
-    alt: "Grand interior staircase renovation",
-  },
-  {
-    number: "05",
-    title: "Free Consultation",
-    description:
-      "Every project begins with a conversation — no cost, no pressure. We listen, assess your space, and outline a path tailored to your vision and budget.",
-    image: "https://images.unsplash.com/photo-1598928387577-d49b6d399110?w=600&h=400&fit=crop&auto=format",
-    alt: "Warm dining room consultation space",
+    image: renovationImg,
+    alt: "Renovation before-and-after: demolition on the left, finished room on the right",
   },
 ];
+
+const CONSULTATION = {
+  title: "Free Consultation",
+  description:
+    "Every project begins with a conversation — no cost, no pressure. We listen, assess your space, and outline a path tailored to your vision and budget.",
+};
 
 const PROCESS_STEPS = [
   {
@@ -333,13 +335,11 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-            {SERVICES.map((s, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            {SERVICES.map((s) => (
               <div
                 key={s.number}
-                className={`group bg-background p-8 flex flex-col gap-5 hover:bg-card transition-colors duration-300 ${
-                  i === 4 ? "md:col-span-2 lg:col-span-1" : ""
-                }`}
+                className="group bg-background p-8 flex flex-col gap-5 hover:bg-card transition-colors duration-300"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img
@@ -376,9 +376,22 @@ export default function App() {
                 <br />
                 <em className="italic font-normal">idea to reality.</em>
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-10 max-w-sm">
+              <p className="text-muted-foreground leading-relaxed mb-8 max-w-sm">
                 Our four-stage process keeps you informed and in control — no surprises, no guesswork, no delays.
               </p>
+
+              <div className="border border-border bg-background p-6 mb-8 max-w-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 rounded-full bg-accent" />
+                  <span className="text-xs text-accent tracking-[0.2em]" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+                    STEP ZERO
+                  </span>
+                </div>
+                <h3 className="text-xl font-medium mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  {CONSULTATION.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{CONSULTATION.description}</p>
+              </div>
               <a
                 href="mailto:mahendrahalmandge@gmail.com?subject=Free%20Consultation%20Request"
                 className="inline-flex items-center gap-2 bg-foreground text-primary-foreground px-8 py-4 hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
@@ -471,10 +484,12 @@ export default function App() {
 
             <div className="flex flex-col gap-6">
               {[
-                { icon: MapPin, label: "Studio", value: "15.3.55, Ganesh Colony, Kumbarvada Cross, Bidar – 585403" },
-                { icon: Mail, label: "Email", value: "mahendrahalmandge@gmail.com" },
-              ].map(({ icon: Icon, label, value }) => (
-                <div key={label} className="flex gap-4 items-start">
+                { icon: MapPin, label: "Studio", value: "15.3.55, Ganesh Colony, Kumbarvada Cross, Bidar – 585403", href: undefined },
+                { icon: Phone, label: "Phone", value: "+91 89713 46766", href: "tel:+918971346766" },
+                { icon: Phone, label: "Phone", value: "+91 97312 00115", href: "tel:+919731200115" },
+                { icon: Mail, label: "Email", value: "mahendrahalmandge@gmail.com", href: "mailto:mahendrahalmandge@gmail.com" },
+              ].map(({ icon: Icon, label, value, href }, idx) => (
+                <div key={`${label}-${idx}`} className="flex gap-4 items-start">
                   <div className="w-10 h-10 border border-white/15 flex items-center justify-center shrink-0">
                     <Icon size={16} className="text-accent" />
                   </div>
@@ -482,7 +497,13 @@ export default function App() {
                     <p className="text-xs text-white/35 mb-0.5" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.2em" }}>
                       {label}
                     </p>
-                    <p className="text-sm text-white/75 leading-relaxed">{value}</p>
+                    {href ? (
+                      <a href={href} className="text-sm text-white/75 leading-relaxed hover:text-accent transition-colors duration-200">
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="text-sm text-white/75 leading-relaxed">{value}</p>
+                    )}
                   </div>
                 </div>
               ))}
