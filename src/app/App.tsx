@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Mail, Phone, MapPin, Clock, ArrowRight, ChevronRight, Play, Pause, Instagram, Facebook, Youtube } from "lucide-react";
+import { Menu, X, Mail, Phone, MapPin, Clock, ArrowRight, ChevronRight, Play, Pause } from "lucide-react";
 
 import logoSrc from "../imports/logo_hc.png";
 import video1 from "../imports/WhatsApp_Video_2026-07-02_at_14.52.05.mp4";
@@ -15,6 +15,7 @@ import floorplan2d3d from "../imports/floorplan_2d_3d.png";
 import interiorDesignImg from "../imports/interior_design.png";
 import structuralDesignImg from "../imports/structural_design.png";
 import renovationImg from "../imports/renovation.png";
+import turnkeyImg from "../imports/turnkey.png";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
@@ -55,6 +56,14 @@ const SERVICES = [
       "Breathe new life into existing spaces. Whether a single room or a full overhaul, we manage every detail from demolition to finishing.",
     image: renovationImg,
     alt: "Renovation before-and-after: demolition on the left, finished room on the right",
+  },
+  {
+    number: "05",
+    title: "Turnkey Projects",
+    description:
+      "A complete, ready-to-move-in solution — design, construction, and all materials handled by us. You get the keys to a finished space with nothing left to source.",
+    image: turnkeyImg,
+    alt: "Turnkey project handover — a finished house with a key and included materials",
   },
 ];
 
@@ -337,11 +346,11 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+          <div className="flex flex-wrap justify-center gap-px bg-border">
             {SERVICES.map((s) => (
               <div
                 key={s.number}
-                className="group bg-background p-8 flex flex-col gap-5 hover:bg-card transition-colors duration-300"
+                className="group bg-background p-8 flex flex-col gap-5 hover:bg-card transition-colors duration-300 grow-0 shrink-0 basis-full sm:basis-[calc(50%-0.5px)] lg:basis-[calc(25%-0.75px)]"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img
@@ -566,23 +575,57 @@ export default function App() {
           <p>© {new Date().getFullYear()} All rights reserved</p>
         </div>
 
-        <div className="max-w-7xl mx-auto mt-6 pt-6 border-t border-white/5 flex items-center justify-center gap-6">
-          {[
-            { Icon: Instagram, href: "https://www.instagram.com/halmandge_construction?igsh=MTE0YWN1M250bWg3Yg==", label: "Instagram" },
-            { Icon: Facebook, href: "https://www.facebook.com/share/1BPNVP2zHn/", label: "Facebook" },
-            { Icon: Youtube, href: "https://youtube.com/@halmandgeconstructions?si=wln2ww6oR4MxfTes", label: "YouTube" },
-          ].map(({ Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="w-10 h-10 flex items-center justify-center border border-white/15 rounded-full text-white/60 hover:text-accent hover:border-accent transition-colors duration-200"
-            >
-              <Icon size={18} />
-            </a>
-          ))}
+        <div className="max-w-7xl mx-auto mt-6 pt-6 border-t border-white/5 flex items-center justify-center gap-5">
+          <a
+            href="https://www.instagram.com/halmandge_construction?igsh=MTE0YWN1M250bWg3Yg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="w-11 h-11 flex items-center justify-center bg-white rounded-xl hover:scale-110 transition-transform duration-200 shadow"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0" stopColor="#FEDA75" />
+                  <stop offset="0.3" stopColor="#FA7E1E" />
+                  <stop offset="0.6" stopColor="#D62976" />
+                  <stop offset="0.85" stopColor="#962FBF" />
+                  <stop offset="1" stopColor="#4F5BD5" />
+                </linearGradient>
+              </defs>
+              <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="url(#igGrad)" strokeWidth="2.2" />
+              <circle cx="12" cy="12" r="4.6" fill="none" stroke="url(#igGrad)" strokeWidth="2.2" />
+              <circle cx="17.4" cy="6.6" r="1.4" fill="url(#igGrad)" />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/share/1BPNVP2zHn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="w-11 h-11 flex items-center justify-center bg-white rounded-xl hover:scale-110 transition-transform duration-200 shadow"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                fill="#1877F2"
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://youtube.com/@halmandgeconstructions?si=wln2ww6oR4MxfTes"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="w-11 h-11 flex items-center justify-center bg-white rounded-xl hover:scale-110 transition-transform duration-200 shadow"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                fill="#FF0000"
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              />
+            </svg>
+          </a>
         </div>
       </footer>
     </div>
