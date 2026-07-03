@@ -535,7 +535,7 @@ export default function App() {
             </div>
 
             <a
-              href="mailto:halmandgeconstructions@gmail.com?subject=Free%20Consultation%20Request"
+              href="tel:+918971346766"
               className="group flex items-center justify-between bg-accent text-accent-foreground px-8 py-7 hover:opacity-90 transition-opacity duration-200"
             >
               <div>
