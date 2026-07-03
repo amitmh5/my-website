@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Mail, Phone, MapPin, Clock, ArrowRight, ChevronRight, Play, Pause } from "lucide-react";
+import { Menu, X, Mail, Phone, MapPin, Clock, ArrowRight, ChevronRight, Play, Pause, Instagram, Facebook, Youtube } from "lucide-react";
 
 import logoSrc from "../imports/logo_hc.png";
 import video1 from "../imports/WhatsApp_Video_2026-07-02_at_14.52.05.mp4";
@@ -564,6 +564,25 @@ export default function App() {
           <p>Bidar, Karnataka – 585403</p>
           <p>halmandgeconstructions@gmail.com</p>
           <p>© {new Date().getFullYear()} All rights reserved</p>
+        </div>
+
+        <div className="max-w-7xl mx-auto mt-6 pt-6 border-t border-white/5 flex items-center justify-center gap-6">
+          {[
+            { Icon: Instagram, href: "https://www.instagram.com/halmandge_construction?igsh=MTE0YWN1M250bWg3Yg==", label: "Instagram" },
+            { Icon: Facebook, href: "https://www.facebook.com/share/1BPNVP2zHn/", label: "Facebook" },
+            { Icon: Youtube, href: "https://youtube.com/@halmandgeconstructions?si=wln2ww6oR4MxfTes", label: "YouTube" },
+          ].map(({ Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="w-10 h-10 flex items-center justify-center border border-white/15 rounded-full text-white/60 hover:text-accent hover:border-accent transition-colors duration-200"
+            >
+              <Icon size={18} />
+            </a>
+          ))}
         </div>
       </footer>
     </div>
