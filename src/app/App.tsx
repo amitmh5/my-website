@@ -199,7 +199,9 @@ export default function App() {
               <button
                 key={l.label}
                 onClick={() => scrollTo(l.href)}
-                className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className={`text-sm tracking-wide transition-colors duration-200 ${
+                  scrolled ? "text-muted-foreground hover:text-foreground" : "text-white/90 hover:text-white"
+                }`}
               >
                 {l.label}
               </button>
@@ -207,7 +209,7 @@ export default function App() {
           </nav>
 
           <a
-            href="mailto:halmandgeconstructions@gmail.com?subject=Free%20Consultation%20Request"
+            href="tel:+918971346766"
             className="hidden lg:inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 hover:opacity-90 transition-opacity duration-200"
             style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.1em" }}
           >
@@ -215,7 +217,7 @@ export default function App() {
           </a>
 
           <button
-            className="lg:hidden text-foreground p-1"
+            className={`lg:hidden p-1 transition-colors duration-200 ${scrolled ? "text-foreground" : "text-white"}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -235,7 +237,7 @@ export default function App() {
               </button>
             ))}
             <a
-              href="mailto:halmandgeconstructions@gmail.com?subject=Free%20Consultation%20Request"
+              href="tel:+918971346766"
               className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-3 w-fit mt-2"
               style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.1em" }}
             >
