@@ -393,7 +393,7 @@ export default function App() {
                 <p className="text-sm text-muted-foreground leading-relaxed">{CONSULTATION.description}</p>
               </div>
               <a
-                href="mailto:halmandgeconstructions@gmail.com?subject=Free%20Consultation%20Request"
+                href="tel:+918971346766"
                 className="inline-flex items-center gap-2 bg-foreground text-primary-foreground px-8 py-4 hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
                 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.1em" }}
               >
