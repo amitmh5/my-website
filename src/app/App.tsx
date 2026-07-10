@@ -280,7 +280,7 @@ export default function App() {
               className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white font-medium leading-[1.05] mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              AMH Amit aaaaaaaaa  kdshfjkdsf
+              Spaces designed
               <br />
               <em className="italic font-normal" style={{ color: "#F1B525" }}>to endure.</em>
             </h1>
